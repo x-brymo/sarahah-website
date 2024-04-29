@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href=
+"https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+          rel="stylesheet">
+ <link rel="stylesheet" href="./components/styleSignup.css">
+</head>
+<body>
+    <div class="row flex items-space-between justify-space-between ">
+    <div class="form_container" >
+    <div class="form_container_1">
+        <div class="w-full max-w-md bg-white bg-opacity-25 backdrop-filter backdrop-blur-sm bg-clip-padding  rounded-lg shadow-md p-6">
+          <h2 class="text-2xl font-bold text-gray-600 mb-4">Sign Up</h2>
+          <form class="flex flex-col">
+            <div class="flex space-x-4 mb-4">
+              <input
+                placeholder="First Name"
+                class="bg-black-700 text-gray-200 border-0 rounded-md p-2 w-1/2 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+                type="text"
+              />
+              <input
+                placeholder="Last Name"
+                class="bg-black-700 text-gray-200 border-0 rounded-md p-2 w-1/2 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+                type="text"
+              />
+            </div>
+            <input
+              placeholder="Email"
+              class="bg-black-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              type="email"
+            />
+            <input
+              placeholder="Confirm Email"
+              class="bg-black-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              type="email"
+            />
+            <input
+              placeholder="Password"
+              class="bg-black-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              type="password"
+            />
+            <input
+              placeholder="Confirm Password"
+              class="bg-black-700 text-gray-500 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              type="password"
+            />
+            <label class="text-sm mb-2 text-gray-500 cursor-pointer" for="gender">
+              Gender
+            </label>
+            <select
+              class="bg-black-700 text-gray-500 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+              id="gender"
+            >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            <label class="text-sm mb-2 text-gray-500 cursor-pointer" for="age">
+              Age
+            </label>
+            <input
+              class="bg-black-700 text-gray-500 border-0 rounded-md p-2"
+              id="age"
+              type="date"
+            />
+            <p class="text-black-200 mt-4">
+              Already have an account?
+              <a class="text-sm text-black font-bold hover:text-indigo-500 -200 hover:underline mt-4" href="#"
+                >Login</a
+              >
+            </p>
+            <button
+              class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
+              type="submit"
+                onclick="alert('Thank you for signing up!')"
+            >
+              Sign Up
+            </button>
+          </form>
+        </div>
+        <!--- bg-gradient-to-r from-indigo-500 to-blue-500 -->
+        <div class="w-full max-w-md p-6">
+          <p class="text-yellow mt-200  text-center ">By signing up, you agree to the terms of use and privacy policy.</p>
+          <p class="text-black mt-200  text-center">© 2023 Sarahah. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+      <div class="containerImageRight"> <div class="w-full max-w-md  backdrop-filter backdrop-blur-sm bg-clip-padding rounded-lg center  ">
+        <img src="./assets/Signup.gif" alt="  " srcset="  ">
+      </div></div>
+    </div>
+</body>
+</html>
