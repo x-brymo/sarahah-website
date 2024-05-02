@@ -80,11 +80,11 @@
        // Function to handle sign-up
 async function signUp(event) {
     event.preventDefault(); // Prevent default form submission
-
-    const username = document.getElementById('signupUserName').value;
+  //
+    const userName = document.getElementById('signupUserName').value;
     const email = document.getElementById('signupEmail').value;
     const password = document.getElementById('signupPassword').value;
-    const confirmPassword = document.getElementById('signupConfirmPassword').value;
+    const cPassword = document.getElementById('signupConfirmPassword').value;
     const gender = document.getElementById('gender').value;
 
     // Validate password and confirm password
@@ -102,20 +102,21 @@ async function signUp(event) {
 
     try {
         const response = await axios.post('https://saraha-gilt.vercel.app/auth/signup', {
-            userName: username,
+            userName: userName,
             email: email,
             password: password,
-            cPassword: confirmPassword,
+            cPassword: cPassword,
             gender: gender
         });
 
         // Handle response, such as displaying a success message or redirecting to another page
         console.log('Sign up successful:', response.data);
         alert("Sign up successful : " + response.data);
+        window.location.href = "./signin.html";
     } catch (error) {
         // Handle error, such as displaying an error message to the user
         console.error('Sign up failed:', error.response.data);
-        alert("Server  Error :" +  error.response.data)
+        alert("Server  Error :" +  error.response.data);
     }
 }
 
