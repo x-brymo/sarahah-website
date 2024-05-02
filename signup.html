@@ -88,7 +88,7 @@ async function signUp(event) {
     const gender = document.getElementById('gender').value;
 
     // Validate password and confirm password
-    if (password !== confirmPassword) {
+    if (password !== cPassword) {
         alert('كلمات المرور غير متطابقة');
         return;
     }
