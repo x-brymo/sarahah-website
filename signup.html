@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 <head>
     <link href=
 "https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
@@ -11,71 +11,58 @@
     <div class="form_container" >
     <div class="form_container_1">
         <div class="w-full max-w-md bg-white bg-opacity-25 backdrop-filter backdrop-blur-sm bg-clip-padding  rounded-lg shadow-md p-6">
-          <h2 class="text-2xl font-bold text-gray-600 mb-4">Sign Up</h2>
-          <form class="flex flex-col">
+          <h2 class="text-2xl font-bold text-gray-600 mb-4">تسجيل</h2>
+          <form class="flex flex-col" id="signupForm">
             <div class="flex space-x-4 mb-4">
               <input
-                placeholder="First Name"
+                placeholder=" المستخدم" 
                 class="bg-black-700 text-gray-200 border-0 rounded-md p-2 w-1/2 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
                 type="text"
-              />
-              <input
-                placeholder="Last Name"
-                class="bg-black-700 text-gray-200 border-0 rounded-md p-2 w-1/2 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-                type="text"
+                id="signupUserName" required
               />
             </div>
             <input
-              placeholder="Email"
+              placeholder="البريد الالكتروني" 
               class="bg-black-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
               type="email"
+              id="signupEmail" required
             />
             <input
-              placeholder="Confirm Email"
-              class="bg-black-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-              type="email"
-            />
-            <input
-              placeholder="Password"
+              placeholder="كلمه المرور" 
               class="bg-black-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
               type="password"
+              id="signupPassword" required
             />
             <input
-              placeholder="Confirm Password"
+              placeholder="تاكيد كلمه المرور" 
               class="bg-black-700 text-gray-500 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
               type="password"
+              id="signupConfirmPassword" required
             />
             <label class="text-sm mb-2 text-gray-500 cursor-pointer" for="gender">
-              Gender
+              الجنس
             </label>
             <select
               class="bg-black-700 text-gray-500 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-              id="gender"
+              id="gender"   required
+
             >
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
+              <option value="male">ذكر</option>
+              <option value="female">انثى</option>
+              
             </select>
-            <label class="text-sm mb-2 text-gray-500 cursor-pointer" for="age">
-              Age
-            </label>
-            <input
-              class="bg-black-700 text-gray-500 border-0 rounded-md p-2"
-              id="age"
-              type="date"
-            />
             <p class="text-black-200 mt-4">
-              Already have an account?
-              <a class="text-sm text-black font-bold hover:text-indigo-500 -200 hover:underline mt-4" href="#"
-                >Login</a
+                بالفعل لدى حســاب ? 
+              <a class="text-sm text-black font-bold hover:text-indigo-500 -200 hover:underline mt-4" href="./signin.html"
+                >تسجيل دخول</a
               >
             </p>
             <button
               class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
               type="submit"
-                onclick="alert('Thank you for signing up!')"
+              
             >
-              Sign Up
+            تسجيل
             </button>
           </form>
         </div>
@@ -90,5 +77,53 @@
         <img src="./assets/Signup.gif" alt="  " srcset="  ">
       </div></div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script >
+        $(document.addEventListener("DOMContentLoaded", function(event) {
+            var form = document.getElementById("signupForm");
+            form.addEventListener("submit", function(event) {
+              
+                event.preventDefault();
+                var userName = $("#signupUserName").val();
+                var password = $("#signupPassword").val();
+                var confirmPassword = $("#signupConfirmPassword").val();
+                var email = $("#signupEmail").val();
+                var gender = $("#signupGander").val();
+            });
+            const myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+const raw = JSON.stringify({
+  "userName": userName,
+  "email": email,
+  "password": password,
+  "cPassword": cPassword,
+  "gender": gender
+});
+
+const requestOptions = {
+  method: "POST",
+  headers: myHeaders,
+  body: raw,
+  redirect: "follow"
+};
+
+fetch("https://saraha-gilt.vercel.app/auth/signup", requestOptions)
+  .then((response) => response.text())
+  .then((result) => console.log(result))
+  .catch((error) => console.error(error));
+  try { 
+    if (response.status === 200) {
+        alert("Login successful ☺☻");
+        window.location.href = "./test.html";
+    } else {
+        alert("Invalid username or password");
+        window.location.href = "./signup.html";
+    }
+  } catch (error) {
+    alert("Invalid username or password" + error.message);
+  }
+        }))
+    </script>
 </body>
 </html>

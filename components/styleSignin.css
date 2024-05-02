@@ -24,7 +24,11 @@
     filter: drop-shadow(0px 0.5px 0.5px #EFEFEF) drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
     border-radius: 11px;
   }
-  
+  .register{
+    width: 100%;
+    background-color: #EFEFEF;
+    border-radius: 12px;
+  }
   .title_container {
     display: flex;
     flex-direction: column;
