@@ -1,129 +1,125 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 <head>
-    <link href=
-"https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
-          rel="stylesheet">
- <link rel="stylesheet" href="./components/styleSignup.css">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./components/styleSignup.css">
 </head>
 <body>
     <div class="row flex items-space-between justify-space-between ">
-    <div class="form_container" >
-    <div class="form_container_1">
-        <div class="w-full max-w-md bg-white bg-opacity-25 backdrop-filter backdrop-blur-sm bg-clip-padding  rounded-lg shadow-md p-6">
-          <h2 class="text-2xl font-bold text-gray-600 mb-4">تسجيل</h2>
-          <form class="flex flex-col" id="signupForm">
-            <div class="flex space-x-4 mb-4">
-              <input
-                placeholder=" المستخدم" 
-                class="bg-black-700 text-gray-200 border-0 rounded-md p-2 w-1/2 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-                type="text"
-                id="signupUserName" required
-              />
+        <div class="form_container" >
+            <div class="form_container_1">
+                <div class="w-full max-w-md bg-white bg-opacity-25 backdrop-filter backdrop-blur-sm bg-clip-padding  rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold text-gray-600 mb-4">تسجيل</h2>
+                    <form class="flex flex-col" id="signupForm">
+                        <div class="flex space-x-4 mb-4">
+                            <input
+                                placeholder=" المستخدم" 
+                                class="bg-black-700 text-gray-200 border-0 rounded-md p-2 w-1/2 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+                                type="text"
+                                id="signupUserName" required
+                            />
+                        </div>
+                        <input
+                            placeholder="البريد الالكتروني" 
+                            class="bg-black-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+                            type="email"
+                            id="signupEmail" required
+                        />
+                        <input
+                            placeholder="كلمه المرور" 
+                            class="bg-black-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+                            type="password"
+                            id="signupPassword" required
+                        />
+                        <input
+                            placeholder="تاكيد كلمه المرور" 
+                            class="bg-black-700 text-gray-500 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+                            type="password"
+                            id="signupConfirmPassword" required
+                        />
+                        <label class="text-sm mb-2 text-gray-500 cursor-pointer" for="gender">
+                            الجنس
+                        </label>
+                        <select
+                            class="bg-black-700 text-gray-500 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+                            id="gender"   required
+
+                        >
+                            <option value="male">ذكر</option>
+                            <option value="female">انثى</option>
+                        </select>
+                        <p class="text-black-200 mt-4">
+                            بالفعل لدى حســاب ? 
+                            <a class="text-sm text-black font-bold hover:text-indigo-500 -200 hover:underline mt-4" href="./signin.html">
+                                تسجيل دخول
+                            </a>
+                        </p>
+                        <button
+                            class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
+                            type="submit"
+                        >
+                            تسجيل
+                        </button>
+                    </form>
+                </div>
+                <div class="w-full max-w-md p-6">
+                    <p class="text-yellow mt-200  text-center ">By signing up, you agree to the terms of use and privacy policy.</p>
+                    <p class="text-black mt-200  text-center">© 2023 Sarahah. All rights reserved.</p>
+                </div>
             </div>
-            <input
-              placeholder="البريد الالكتروني" 
-              class="bg-black-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-              type="email"
-              id="signupEmail" required
-            />
-            <input
-              placeholder="كلمه المرور" 
-              class="bg-black-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-              type="password"
-              id="signupPassword" required
-            />
-            <input
-              placeholder="تاكيد كلمه المرور" 
-              class="bg-black-700 text-gray-500 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-              type="password"
-              id="signupConfirmPassword" required
-            />
-            <label class="text-sm mb-2 text-gray-500 cursor-pointer" for="gender">
-              الجنس
-            </label>
-            <select
-              class="bg-black-700 text-gray-500 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-              id="gender"   required
-
-            >
-              <option value="male">ذكر</option>
-              <option value="female">انثى</option>
-              
-            </select>
-            <p class="text-black-200 mt-4">
-                بالفعل لدى حســاب ? 
-              <a class="text-sm text-black font-bold hover:text-indigo-500 -200 hover:underline mt-4" href="./signin.html"
-                >تسجيل دخول</a
-              >
-            </p>
-            <button
-              class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
-              type="submit"
-              
-            >
-            تسجيل
-            </button>
-          </form>
         </div>
-        <!--- bg-gradient-to-r from-indigo-500 to-blue-500 -->
-        <div class="w-full max-w-md p-6">
-          <p class="text-yellow mt-200  text-center ">By signing up, you agree to the terms of use and privacy policy.</p>
-          <p class="text-black mt-200  text-center">© 2023 Sarahah. All rights reserved.</p>
+        <div class="containerImageRight">
+            <div class="w-full max-w-md  backdrop-filter backdrop-blur-sm bg-clip-padding rounded-lg center  ">
+                <img src="./assets/Signup.gif" alt="  " srcset="  ">
+            </div>
         </div>
-      </div>
     </div>
-      <div class="containerImageRight"> <div class="w-full max-w-md  backdrop-filter backdrop-blur-sm bg-clip-padding rounded-lg center  ">
-        <img src="./assets/Signup.gif" alt="  " srcset="  ">
-      </div></div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script >
-        $(document.addEventListener("DOMContentLoaded", function(event) {
-            var form = document.getElementById("signupForm");
-            form.addEventListener("submit", function(event) {
-              
-                event.preventDefault();
-                var userName = $("#signupUserName").val();
-                var password = $("#signupPassword").val();
-                var confirmPassword = $("#signupConfirmPassword").val();
-                var email = $("#signupEmail").val();
-                var gender = $("#signupGander").val();
-            });
-            const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // Function to handle sign-up
+       // Function to handle sign-up
+async function signUp(event) {
+    event.preventDefault(); // Prevent default form submission
 
-const raw = JSON.stringify({
-  "userName": userName,
-  "email": email,
-  "password": password,
-  "cPassword": cPassword,
-  "gender": gender
-});
+    const username = document.getElementById('signupUserName').value;
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+    const confirmPassword = document.getElementById('signupConfirmPassword').value;
+    const gender = document.getElementById('gender').value;
 
-const requestOptions = {
-  method: "POST",
-  headers: myHeaders,
-  body: raw,
-  redirect: "follow"
-};
-
-fetch("https://saraha-gilt.vercel.app/auth/signup", requestOptions)
-  .then((response) => response.text())
-  .then((result) => console.log(result))
-  .catch((error) => console.error(error));
-  try { 
-    if (response.status === 200) {
-        alert("Login successful ☺☻");
-        window.location.href = "./test.html";
-    } else {
-        alert("Invalid username or password");
-        window.location.href = "./signup.html";
+    // Validate password and confirm password
+    if (password !== confirmPassword) {
+        alert('كلمات المرور غير متطابقة');
+        return;
     }
-  } catch (error) {
-    alert("Invalid username or password" + error.message);
-  }
-        }))
+
+    // Validate password format
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+    if (!passwordRegex.test(password)) {
+        alert('كلمة المرور يجب أن تحتوي على على الأقل 8 أحرف تتكون من حرف كبير وحرف صغير ورقم.');
+        return;
+    }
+
+    try {
+        const response = await axios.post('http:saraha-gilt.vercel.app/auth/signup', {
+            username: username,
+            email: email,
+            password: password,
+            confirmPassword: confirmPassword,
+            gender: gender
+        });
+
+        // Handle response, such as displaying a success message or redirecting to another page
+        console.log('Sign up successful:', response.data);
+    } catch (error) {
+        // Handle error, such as displaying an error message to the user
+        console.error('Sign up failed:', error.response.data);
+    }
+}
+
+// Add event listener to the form
+document.getElementById('signupForm').addEventListener('submit', signUp);
+
     </script>
 </body>
 </html>
