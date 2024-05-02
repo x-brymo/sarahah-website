@@ -111,9 +111,11 @@ async function signUp(event) {
 
         // Handle response, such as displaying a success message or redirecting to another page
         console.log('Sign up successful:', response.data);
+        alert("Sign up successful : " + response.data);
     } catch (error) {
         // Handle error, such as displaying an error message to the user
         console.error('Sign up failed:', error.response.data);
+        alert("Server  Error :" +  error.response.data)
     }
 }
 
