@@ -73,49 +73,31 @@
           </form>
     </center>
     <script>
-      document.addEventListener("DOMContentLoaded", function(event) {
-         var form = document.getElementById("login-form");
-         form.addEventListener("submit", function(event) {
-             event.preventDefault();
-             var email = document.getElementById("email").value;
-             var password = document.getElementById("password").value;
-             login(email, password);
-
-         })
-
-      })
-      function login(username, password) {
-        const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-
-const raw = JSON.stringify({
-  "userName": username,
-  "password": password
-});
-
-const requestOptions = {
-  method: "POST",
-  headers: myHeaders,
-  body: raw,
-  redirect: "follow"
-};
-
-fetch("https://saraha-gilt.vercel.app/auth/signin", requestOptions)
-  .then((response) => response.text())
-  .then((result) => console.log(result))
-  .catch((error) => console.error(error));
-  try {
-              if (response.status === 200) {
-                      alert("Login successful ☺☻");
-                      window.location.href = "./test.html";
-              } else {
-                  alert("Invalid username or password");
-                  window.location.href = "./signin.html";
-              }
-          } catch (error) {
-            alert("Invalid username or password" + error.message);
-          }
-      }
+      document.getElementById("login-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        
+        // Get the email and password values
+        const email = document.getElementById("email_field").value;
+        const password = document.getElementById("password_field").value;
+        
+        // Example Axios code for sending a POST request to your backend server
+        axios.post('https://saraha-gilt.vercel.app/auth/signin', {
+          email: email,
+          password: password
+        })
+        .then(function (response) {
+          // Handle success, for example, redirect to another page
+          console.log('Success:', response.data);
+          alert('Sign in successful!');
+          window.location.href = '/dashboard';
+        })
+        .catch(function (error) {
+          // Handle error, for example, display an error message
+          Error('Error:', error);
+          console.error('Error:', error);
+          alert('An error occurred. Please try again.');
+        });
+      });
         
     </script>
 </body>
