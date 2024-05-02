@@ -102,10 +102,10 @@ async function signUp(event) {
 
     try {
         const response = await axios.post('https://saraha-gilt.vercel.app/auth/signup', {
-            username: username,
+            userName: username,
             email: email,
             password: password,
-            confirmPassword: confirmPassword,
+            cPassword: confirmPassword,
             gender: gender
         });
 
