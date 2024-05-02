@@ -1,0 +1,43 @@
+.containerMainLeading{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    justify-content: center;
+    gap: 10px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+.styltext1{
+    font-family: 'Inter', sans-serif;
+    font-style: bold;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    text-align: center;
+    
+}
+.styltext2{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    text-align: center;
+
+}
+.styltext3{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    text-align: center;
+
+}
