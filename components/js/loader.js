@@ -3,6 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // d:/Projects/DevWeb/AhmedKhaledFinalProject/sarahah-website/landingPage
         window.location.href = "leading.html";
     },
-    50000  // scand navigator 
+    5000  // scand navigator 
 )
 });
