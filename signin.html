@@ -79,8 +79,8 @@
       async function signIn(event) {
     event.preventDefault(); // Prevent default form submission
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    var email = $('#email').val();
+    var password = $('#password').val();
 
     try {
         const response = await axios.post('https://saraha-gilt.vercel.app/auth/signin', {
@@ -91,8 +91,10 @@
         // Handle successful sign-in, such as storing user data in localStorage and redirecting to dashboard
         const userData = encodeURIComponent(JSON.stringify(response.data.user));
         localStorage.setItem('token', response.data.token);
-        const redirectUrl = '/dashboard.html?userData=' + userData;
-        window.location.href = redirectUrl;
+        //const redirectUrl = '/dashboard.html?userData=' + userData;
+        //window.location.href = redirectUrl;
+        alert('Sign in successful');
+        window.location.href = '/dashboard.html';
     } catch (error) {
         // Handle sign-in failure, such as displaying an error message to the user
         console.error('Sign in failed:', error.response.data);
