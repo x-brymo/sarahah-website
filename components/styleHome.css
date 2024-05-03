@@ -3,20 +3,31 @@ body {
 }
 .message-card {
     display: flex;
+    background-color: #f4f4f4;
+    position: relative;
     align-items: center;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    height: 155px;
+    box-shadow: 0px 106px 42px #3b77fa17,
+    0px 59px 36px rgba(187, 187, 187, 0.05), 0px 26px 26px #3b77fa17,
+    0px 7px 15px #3b77fa17 , 20px 20px 20px  #3b77fa17;
 
 }
- 
+ .dateCard{
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    left: 10px;
+   
+ }
 .message-card img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
     margin-right: 20px;
+    
 }
  
 .message-actions button {
@@ -51,4 +62,50 @@ body {
 
 .card-header .nav-link.active {
     color: #007bff;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 100px;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    width: 26%;
+    max-width: 600px;
+    height: 180px;
+    top: 50%;
+    transform: translateY(-100%);
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1), 0 0 0
+        5px rgba(0, 0, 0, 0.1), 0 0
+        0
+
+     5px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

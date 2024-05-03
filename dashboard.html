@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صراحة</title>
+    <link rel="stylesheet" href="./components/fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./components/styleHome.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            <img src="./assets/blue-envelope.png" alt="Sarahaha Logo" class="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <button class="nav-link btn btn-danger" onclick="openSignOutDialog()">تسجيل خروج</button>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#">الاعدادت</a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Body -->
+    <div class="container text-center mt-5">
+        <div class="container">
+            <div class="card card-profile shadow-sm mt--300">
+                <div class="px-4">
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <div class="card-profile-image">
+                                <a role="button" data-toggle="modal" data-target="#modal-photo" href="#modal-photo">
+                                    <img src="https://anofie.classiebit.com/upload/users/images/1562243911882_thumb.jpg" class="rounded-circle" style="top: -5.5rem;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h6 font-weight-300">
+                        <i class="fas fa-share-alt mr-2"></i> anofie.classiebit.com/ginawhite
+                    </div>
+                    <div class="h6 mt-3 mb-0">
+                        Share Profile On
+                    </div>
+                    <div class="d-flex justify-content-center mb-2">
+                        <div class="p-3">
+                            <a title="Facebook" href="https://www.facebook.com/sharer.php?u=https://anofie.classiebit.com/ginawhite&amp;quote=Review me honestly &amp;hashtag=%23anofie" target="_blank"><small><i class="fab fa-facebook-square fa-2x"></i></small></a>
+                        </div>
+                        <div class="p-3">
+                            <a title="Twitter" href="https://twitter.com/intent/tweet/?text=Review+me+honestly++%23anofie+https%3A%2F%2Fanofie.classiebit.com%2Fginawhite" target="_blank"><small><i class="fab fa-twitter fa-2x"></i></small></a>
+                        </div>
+                        <div class="p-3">
+                            <a title="Whatsapp" href="https://api.whatsapp.com/send?text=Review me honestly  #anofie https://anofie.classiebit.com/ginawhite" target="_blank"><small><i class="fab fa-whatsapp fa-2x"></i> </small></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-5">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">المفضلة</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">ارسال الرسايل</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">الرسايل</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <!-- Content for the selected tab will go here -->
+                        <!-- <div class="tab-content">
+                         Tab pane for favorites -->
+                            <div class="tab-pane">
+                                <div class="message-card" data-id="1" data-username="username1">
+                                    <img alt="User Image" src="https://via.placeholder.com/150" class="rounded"/>
+                                    <div class="message-content d-flex justify-content-space-between">
+                                        <div class="col-12 text-right">
+                                            <p>Ahmed Khaled</p>
+                                            <p>Hello man  ggggggggggggggg</p>
+                                        </div>
+                                        <div class="dateCard">
+                                            <p>01/01/2020</p>
+                                            <a href="#" class="btn-fav"><i class="fas fa-heart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!-- Tab pane for sending messages -->
+                            <div class="tab-pane">
+                                <!-- Content for sending messages tab will go here -->
+                                <h6> Hello 65</h6>
+                                <h6> Hello 65</h6>
+                                <h6> Hello 65</h6>
+                                <h6> Hello 65</h6>
+                                <h6> Hello 65</h6>
+                                <h6> Hello 65</h6>
+                                <h6> Hello 65</h6>
+                                <h6> Hello 65</h6>
+                            </div>
+                            <!-- Tab pane for received messages -->
+                            <div class="tab-pane">
+                                <h3>Hello 66</h3>
+                                <!-- Content for received messages tab will go here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Out Modal -->
+    <div id="signOutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignOutDialog()">&times;</span>
+            <p>Are you sure you want to sign out?</p>
+            <a onclick="signOut()" class="btn btn-danger">Yes, Sign Out</a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Function to handle sign-out
+        function signOut() {
+            var header = Headers();
+            var myToken = localStorage.getItem("token");
+            header. append("authorization", "HAMADA__" + myToken);
+            axios.post("https://saraha-gilt.vercel.app/auth/signout", {
+                token: myToken
+            }, {
+                headers: header
+            },
+            ).then(response => {
+                console.log(response);
+                localStorage.clear();
+                window.location.href = "/signin.html";
+                console.log("User signed out");
+
+            }).catch(error => {
+                console.log(error);
+            });
+
+            closeSignOutDialog();
+        }
+
+        // Function to open sign-out dialog
+        function openSignOutDialog() {
+            document.getElementById("signOutModal").style.display = "block";
+        }
+
+        // Function to close sign-out dialog
+        function closeSignOutDialog() {
+            document.getElementById("signOutModal").style.display = "none";
+        }
+
+        // JavaScript code to handle adding messages to favorites and sending messages
+        $('.message-actions .btn-fav').click(function() {
+            // Add logic to handle adding messages to favorites
+            $(this).parent().parent().addClass('fav-message');
+            // Example: Save message to local storage
+            var messageId = $(this).closest('.message-card').data('id');
+            var favoriteMessages = JSON.parse(localStorage.getItem('favoriteMessages')) || [];
+            favoriteMessages.push(messageId);
+            localStorage.setItem('favoriteMessages', JSON.stringify(favoriteMessages));
+        });
+
+        $('.message-actions .btn-send').click(function () {
+            // Add logic to handle sending messages
+            var recipientUsername = $(this).closest('.message-card').data('username');
+            // Example: Use recipientUsername to send a message
+            console.log('Sending message to: ' + recipientUsername);
+        });
+        
+        $('.nav-link').on('click', function(e) {
+    e.preventDefault();
+    $('.nav-link').removeClass('active');
+    $(this).addClass('active');
+    var tabId = $(this).attr('href'); // Get the ID of the selected tab
+    showTabContent(tabId); // Call a function to show the content of the selected tab
+});
+
+// Function to show content based on the selected tab
+function showTabContent(tabId) {
+    // Hide all tab content
+    $('.tab-pane').hide();
+    // Show the selected tab content
+    $(tabId).show();
+    
+    // Check if the selected tab is the Favorites tab
+    if (tabId === '#favorites') {
+        // Check if there are any favorite messages
+        var favoriteMessages = JSON.parse(localStorage.getItem('favoriteMessages')) || [];
+        if (favoriteMessages.length > 0) {
+            // If there are favorite messages, display them
+            $('.message-card').hide(); // Hide all message cards
+            favoriteMessages.forEach(function(messageId) {
+                $('.message-card[data-id="' + messageId + '"]').show(); // Show only the favorite message cards
+            });
+            $('.message-card-placeholder').hide(); // Hide the placeholder message
+        } else {
+            // If there are no favorite messages, show the placeholder message
+            $('.message-card').hide();
+            $('.message-card-placeholder').show();
+        }
+    }
+    
+    // Add similar logic for other tabs here...
+    // For example, you can add logic to handle sent messages and received messages tabs.
+}
+
+// Show content for the initial active tab
+showTabContent($('.nav-link.active').attr('href'));
+    </script>
+</body>
+
+</html>

@@ -73,31 +73,36 @@
           </form>
     </center>
     <script>
+      //https://saraha-gilt.vercel.app/auth/signin
       document.getElementById("login-form").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the form from submitting
-        
-        // Get the email and password values
-        const email = document.getElementById("email_field").value;
-        const password = document.getElementById("password_field").value;
-        
-        // Example Axios code for sending a POST request to your backend server
-        axios.post('https://saraha-gilt.vercel.app/auth/signin', {
-          email: email,
-          password: password
-        })
-        .then(function (response) {
-          // Handle success, for example, redirect to another page
-          console.log('Success:', response.data);
-          alert('Sign in successful!');
-          window.location.href = '/dashboard';
-        })
-        .catch(function (error) {
-          // Handle error, for example, display an error message
-          Error('Error:', error);
-          console.error('Error:', error);
-          alert('An error occurred. Please try again.');
+            event.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            axios.post("https://saraha-gilt.vercel.app/auth/signin", {
+                email: email,
+                password: password
+                
+            }
+          
+          )
+            .then(response => {
+                const data = response.data;
+                if (data.success) {
+                    const userData = encodeURIComponent(JSON.stringify(data.user));
+                    const redirectUrl = "/dashboard.html?userData=" + userData;
+                    //const myLocalStorage = window.localStorage;
+                    //myLocalStorage.setItem("token",response.data.token);
+                    localStorage.setItem("token", data.token);
+                    window.location.href = `/dashboard.html?userData=${userData}`;
+                } else {
+                    alert(data.message); // Display error message
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred. Please try again.");
+            });
         });
-      });
         
     </script>
 </body>
