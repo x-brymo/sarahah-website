@@ -76,8 +76,8 @@
       //https://saraha-gilt.vercel.app/auth/signin
       document.getElementById("login-form").addEventListener("submit", function(event) {
             event.preventDefault();
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
+            var email = $("#email").val();
+            var password = $("#password").val();
             axios.post("https://saraha-gilt.vercel.app/auth/signin", {
                 email: email,
                 password: password
