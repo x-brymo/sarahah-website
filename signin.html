@@ -104,7 +104,7 @@
         }
         // check statuscode 
         if (response.status == 200) {
-            console.log(response.data.user);
+            console.log(response.data);
             const userData = encodeURIComponent(JSON.stringify(response.data.user));
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('idUser', response.data.id);
