@@ -177,11 +177,13 @@
                     "authorization": "HAMADA__" + localStorage.getItem("token")
                 }
             });
+            console.log("Response:", response.data.user);
             try {
                 if (response.status == 200) {
                     console.log(response.data);
                     document.getElementById("username").innerHTML = response.data.user.username
                     document.getElementById("email").innerHTML = response.data.user.email
+
                     console.log(response.data.user);
                 }
             } catch (error) {
