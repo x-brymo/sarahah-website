@@ -104,11 +104,11 @@
             console.log(response.data.user);
             const userData = encodeURIComponent(JSON.stringify(response.data.user));
         localStorage.setItem('token', response.data.token);
-        //const redirectUrl = '/dashboard.html?userData=' + userData;
-        //window.location.href = redirectUrl;
+        const redirectUrl = '/dashboard.html?userData=' + userData;
+        window.location.href = redirectUrl;
         alert('Sign in successful');
         Toast.fire('success', 'Sign in successful');
-        var  myId = localStorage.setItem('token', response.data.id);
+        var  myId = localStorage.setItem('idUser', response.data.id);
          console.log(myId);
         window.location.href = '/dashboard.html';
         }else if(response.status == 400){ 
