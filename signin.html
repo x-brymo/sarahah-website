@@ -104,7 +104,7 @@
             console.log(response.data.user);
             const userData = encodeURIComponent(JSON.stringify(response.data.user));
         localStorage.setItem('token', response.data.token);
-        const redirectUrl = '/dashboard.html';
+        const redirectUrl = './dashboard.html';
         window.location.href = redirectUrl;
         alert('Sign in successful');
         Toast.fire('success', 'Sign in successful');
