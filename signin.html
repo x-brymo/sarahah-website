@@ -87,14 +87,31 @@
             email: email,
             password: password
         });
-
-        // Handle successful sign-in, such as storing user data in localStorage and redirecting to dashboard
-        const userData = encodeURIComponent(JSON.stringify(response.data.user));
+        if (response.data == null) {
+            alert('Sign in failed');
+          
+        }
+        if(response.data.token == null){
+            alert('Sign in failed: ' + response.data.message);
+        }
+        // check statuscode 
+        if (response.status == 200) {
+            console.log(response.data.user);
+            const userData = encodeURIComponent(JSON.stringify(response.data.user));
         localStorage.setItem('token', response.data.token);
         //const redirectUrl = '/dashboard.html?userData=' + userData;
         //window.location.href = redirectUrl;
         alert('Sign in successful');
         window.location.href = '/dashboard.html';
+        }else if(response.status == 400){ 
+            alert('Sign in failed 400: ' + response.data.message);
+        }else if(response.status == 404){
+            alert('Sign in failed 404: ' + response.data.message);
+        }else if(response.status == 500){
+            alert('Sign in failed 500: ' + response.data.message);
+        }
+        // Handle successful sign-in, such as storing user data in localStorage and redirecting to dashboard
+        
     } catch (error) {
         // Handle sign-in failure, such as displaying an error message to the user
         console.error('Sign in failed:', error.response.data);
