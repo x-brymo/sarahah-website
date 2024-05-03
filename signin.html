@@ -109,7 +109,7 @@
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('idUser', response.data.id);
         const redirectUrl = './dashboard.html';
-        window.location.href = redirectUrl;
+        //window.location.href = redirectUrl;
         alert('Sign in successful');
         Toast.fire('success', 'Sign in successful');
         console.log(response.data);
