@@ -108,7 +108,7 @@
         //window.location.href = redirectUrl;
         alert('Sign in successful');
         Toast.fire('success', 'Sign in successful');
-        var myId = localStorage.setItem('token', response.data.id);
+        var  myId = localStorage.setItem('token', response.data.id);
          console.log(myId);
         window.location.href = '/dashboard.html';
         }else if(response.status == 400){ 
@@ -122,9 +122,10 @@
         
     } catch (error) {
         // Handle sign-in failure, such as displaying an error message to the user
-        console.error('Sign in failed:', error.response.data.JSON.stringify(error));
+        console.error('Sign in failed:', error.response.data.message);
         alert('Sign in failed: ' + error.response.data.message);
     }
+    
 }
 
 // Add event listener to the sign-in form
