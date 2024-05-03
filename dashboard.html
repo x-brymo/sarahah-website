@@ -143,6 +143,7 @@
     <script>
         // Function to handle sign-out
         function signOut() {
+            console.log("Function to sign out");
             var header = Headers();
             var myToken = localStorage.getItem("token");
             header. append("authorization", "HAMADA__" + myToken);
@@ -169,6 +170,7 @@
             document.getElementById("signOutModal").style.display = "block";
         } 
         document.addEventListener('DOMContentLoaded', function() {
+            console.log("Function to get user data");
             async function getUserData (){
             const response = await axios.get("https://saraha-gilt.vercel.app/user", {
                 headers: {
