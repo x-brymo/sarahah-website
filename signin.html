@@ -79,8 +79,8 @@
       async function signIn(event) {
     event.preventDefault(); // Prevent default form submission
 
-    var email = $('#email').val();
-    var password = $('#password').val();
+    const email = $('#email').val();
+    const password = $('#password').val();
 
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
     if (!passwordRegex.test(password)) {
