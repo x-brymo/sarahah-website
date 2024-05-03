@@ -169,16 +169,27 @@
             document.getElementById("signOutModal").style.display = "block";
         } 
         document.addEventListener('DOMContentLoaded', function() {
-            getUserData();
-        })
-          async function getUserData (){
+            async function getUserData (){
             const response = await axios.get("https://saraha-gilt.vercel.app/user", {
                 headers: {
                     "authorization": "HAMADA__" + localStorage.getItem("token")
                 }
             });
-            console.log(response.data);
+            try {
+                if (response.status == 200) {
+                    console.log(response.data);
+                    document.getElementById("username").innerHTML = response.data.user.username
+                    document.getElementById("email").innerHTML = response.data.user.email
+                    console.log(response.data.user);
+                }
+            } catch (error) {
+                console.log("Server Error :"+ response.data.message);
+                alert("Server Error :"+ response.data.message);
+                
+            }
           }
+        })
+          
         // Function to close sign-out dialog
         function closeSignOutDialog() {
             document.getElementById("signOutModal").style.display = "none";
