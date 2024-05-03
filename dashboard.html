@@ -167,8 +167,18 @@
         // Function to open sign-out dialog
         function openSignOutDialog() {
             document.getElementById("signOutModal").style.display = "block";
-        }
-
+        } 
+        document.addEventListener('DOMContentLoaded', function() {
+            getUserData();
+        })
+          async function getUserData (){
+            const response = await axios.get("https://saraha-gilt.vercel.app/user", {
+                headers: {
+                    "authorization": "HAMADA__" + localStorage.getItem("token")
+                }
+            });
+            console.log(response.data);
+          }
         // Function to close sign-out dialog
         function closeSignOutDialog() {
             document.getElementById("signOutModal").style.display = "none";
