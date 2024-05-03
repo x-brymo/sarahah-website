@@ -102,6 +102,7 @@
         //const redirectUrl = '/dashboard.html?userData=' + userData;
         //window.location.href = redirectUrl;
         alert('Sign in successful');
+        Toast.fire('success', 'Sign in successful');
         window.location.href = '/dashboard.html';
         }else if(response.status == 400){ 
             alert('Sign in failed 400: ' + response.data.message);
