@@ -92,7 +92,7 @@
             email: email,
             password: password
         });
-        console.log("First check"+response.data);
+        console.log("First check"+ response.data);
         if (response.data == null) {
             alert('Sign in failed');
           
@@ -105,14 +105,12 @@
             console.log(response.data.user);
             const userData = encodeURIComponent(JSON.stringify(response.data.user));
         localStorage.setItem('token', response.data.token);
+        localStorage.setItem('idUser', response.data.user._id);
         const redirectUrl = './dashboard.html';
         window.location.href = redirectUrl;
         alert('Sign in successful');
         Toast.fire('success', 'Sign in successful');
         console.log(response.data);
-        var  myId = localStorage.setItem('idUser', response.data.user._id);
-         console.log(myId);
-        window.location.href = '/dashboard.html';
         }else if(response.status == 400){ 
             alert('Sign in failed 400: ' + response.data.message);
         }else if(response.status == 404){
