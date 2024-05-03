@@ -108,6 +108,8 @@
         //window.location.href = redirectUrl;
         alert('Sign in successful');
         Toast.fire('success', 'Sign in successful');
+        var myId = localStorage.setItem('token', response.data.id);
+         console.log(myId);
         window.location.href = '/dashboard.html';
         }else if(response.status == 400){ 
             alert('Sign in failed 400: ' + response.data.message);
@@ -120,7 +122,7 @@
         
     } catch (error) {
         // Handle sign-in failure, such as displaying an error message to the user
-        console.error('Sign in failed:', error.response.data);
+        console.error('Sign in failed:', error.response.data.JSON.stringify(error));
         alert('Sign in failed: ' + error.response.data.message);
     }
 }
