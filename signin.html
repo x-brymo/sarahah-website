@@ -82,11 +82,11 @@
     const email = $('#email').val();
     const password = $('#password').val();
 
-    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
-    if (!passwordRegex.test(password)) {
-        alert('كلمة المرور يجب أن تحتوي على على الأقل 8 أحرف تتكون من حرف كبير وحرف صغير ورقم.');
-        return;
-    }
+    // const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+    // if (!passwordRegex.test(password)) {
+    //     alert('كلمة المرور يجب أن تحتوي على على الأقل 8 أحرف تتكون من حرف كبير وحرف صغير ورقم.');
+    //     return;
+    // }
 
     try {
         const response = await axios.post('https://saraha-gilt.vercel.app/auth/signin', {
