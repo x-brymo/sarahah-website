@@ -166,7 +166,7 @@
             console.log("Function to get sent messages");
             const response = axios.get("https://saraha-gilt.vercel.app/message/sentMessages?sort=-createdAt", {
                 headers: {
-                    "authorization": "HAMADA__" + localStorage.getItem("token"),
+                    "authorization": "HAMADA__" + localStorage.getItem("token")
                 }
             });
          
@@ -242,7 +242,7 @@
             console.log("Function to get messages");
             const response = await axios.get("https://saraha-gilt.vercel.app/message/receivedMessages?sort=-createdAt", {
                 headers: {
-                    "authorization": "HAMADA__" + localStorage.getItem("token"),
+                    "authorization": "HAMADA__" + localStorage.getItem("token")
                 }
             });
             console.log("Response:", response.data.messages);
