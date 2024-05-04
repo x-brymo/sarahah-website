@@ -147,7 +147,7 @@
             console.log("Response:", response.data.user);
             try {
                 if (response.status == 200) {
-                    console.log( "MyData" + response.data.messages);
+                    console.log( "MyData" + response.data);
                     document.getElementById("username").innerHTML = response.data.user.userName
                     document.getElementById("email").innerHTML = response.data.user.email
                     console.log(response.data.user);
@@ -173,7 +173,7 @@
             console.log("Response:", response.data);
             try {
                 if (response.status == 200) {
-                    console.log(response.data);
+                    console.log( "MyData SentMessages" + response.data.messages);
                     var myData = response.data;
                     let cartona = ``;
                     for (const message of myData) {
