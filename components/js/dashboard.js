@@ -1,12 +1,9 @@
 function signOut() {
     console.log("Function to sign out");
-    var header = Headers();
-    var myToken = localStorage.getItem("token");
-    header.append("authorization", "HAMADA__" + myToken);
     axios.post("https://saraha-gilt.vercel.app/auth/signout", {
-        token: myToken
-    }, {
-        headers: header
+        headers: {
+            "authorization": "HAMADA__" + localStorage.getItem("token")
+        }
     },
     ).then(response => {
         console.log(response);
