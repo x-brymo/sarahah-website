@@ -170,7 +170,7 @@
                 }
             });
          
-            console.log("Response:", response.data.messages);
+            console.log("Response sentMessages :", response);
             try {
                 if (response.status == 200) {
                     console.log( "MyData SentMessages" + response.data.messages);
@@ -245,7 +245,7 @@
                     "authorization": "HAMADA__" + localStorage.getItem("token")
                 }
             });
-            console.log("Response:", response.data.messages);
+            console.log("Response receivedMessages:", response);
             try {
                 if (response.status == 200) {
                     console.log(response.data.messages)
