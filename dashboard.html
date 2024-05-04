@@ -147,12 +147,12 @@
             console.log("Response:", response.data.user);
             try {
                 if (response.status == 200) {
-                    console.log(response.data);
+                    console.log( "MyData" + response.data.messages);
                     document.getElementById("username").innerHTML = response.data.user.userName
                     document.getElementById("email").innerHTML = response.data.user.email
                     console.log(response.data.user);
                     const myData = response.data.user;
-                        
+
 
                 }
             } catch (error) {
