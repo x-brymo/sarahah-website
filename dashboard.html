@@ -223,10 +223,10 @@
                     "authorization": "HAMADA__" + localStorage.getItem("token"),
                 }
             });
-            console.log("Response:", response.data);
+            console.log("Response:", response.data.messages);
             try {
                 if (response.status == 200) {
-                    console.log(response.data);
+                    console.log(response.data.messages)
                     var myData = response.data.messages;
                     let cartona = ``;
                     for (const message of myData) {
