@@ -189,6 +189,28 @@
   <!-- Custom JS -->
  </body>
  <script>
+  
+  function changeImageProfile() {
+    document.addEventListener("DOMContentLoaded", async function(event) {
+    ///user/profilPic url
+      const response = await axios.post("https://saraha-gilt.vercel.app//user/profilPic", {
+          headers: {
+              'authorization': `Bearer ${localStorage.getItem("token")}`
+          }
+      })
+      .then(function (response) {
+          document.getElementById("profilePic").src = response.data.data
+          console.log(response.data.data);
+
+      })
+      .catch(function (error) {
+          console.log(error);
+          
+      })
+        
+  })
+    
+  }
   function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
