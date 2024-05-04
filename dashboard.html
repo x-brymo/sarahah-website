@@ -148,7 +148,7 @@
             try {
                 if (response.status == 200) {
                     console.log(response.data);
-                    document.getElementById("username").innerHTML = response.data.user.username
+                    document.getElementById("username").innerHTML = response.data.user.userName
                     document.getElementById("email").innerHTML = response.data.user.email
                     console.log(response.data.user);
                     const myData = response.data.user;
